@@ -4,6 +4,11 @@
 
 This gem allows you to automatically tag Git commits when you deploy with Capistrano.
 
+## Compatibility
+
+This gem will only work with Capistrano 3.x. For a similar gem that works with
+Capistrano 2.x, use [capistrano-deploy-tagger](https://github.com/forward/capistrano-deploy-tagger).
+
 ## Why would you tag on deploy?
 
 One reason you would want to tag on deploy is to keep track of what commit is currently 
