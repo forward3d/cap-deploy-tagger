@@ -1,5 +1,8 @@
+# Ensure deploy tasks are loaded before we run
+require 'capistrano/deploy'
+
 # Load extra tasks into the deploy namespace
-load File.expand_path("../tasks/tagger.rake", __FILE__)
+load File.expand_path("../cap-deploy-tagger/tasks/tagger.rake", __FILE__)
 
 module CapDeployTagger
   class Helper
@@ -11,7 +14,7 @@ module CapDeployTagger
     end
     
     def self.git(cmd)
-      `git #{cmd}`.chomp
+      `git #{cmd} 2>&1`.chomp
     end
     
     def self.latest_revision

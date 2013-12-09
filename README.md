@@ -28,11 +28,6 @@ Now add the gem to your Capistrano `Capfile`:
 
     require 'cap-deploy-tagger'
 
-You _must_ add this line after the line that includes the default deploy tasks, e.g.:
-
-    require 'capistrano/deploy'
-    require 'cap-deploy-tagger'
-
 ## Usage and configuration
 
 ### Tag name
