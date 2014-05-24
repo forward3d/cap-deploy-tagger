@@ -11,8 +11,8 @@ Capistrano 2.x, use [capistrano-deploy-tagger](https://github.com/forward/capist
 
 ## Why would you tag on deploy?
 
-One reason you would want to tag on deploy is to keep track of what commit is currently 
-in production (or in staging or some other stage). You may also want to track this 
+One reason you would want to tag on deploy is to keep track of what commit is currently
+in production (or in staging or some other stage). You may also want to track this
 if you're using some kind of scaling process to deploy code - this will allow you to
 deploy the same release that other servers are currently using.
 
@@ -31,7 +31,7 @@ so that it's not deployed to your production servers:
 
 Now add the gem to your Capistrano `Capfile`:
 
-    require 'cap-deploy-tagger'
+    require 'cap-deploy-tagger/capistrano'
 
 ## Usage and configuration
 
@@ -55,7 +55,7 @@ You may want to skip tagging in some instances - to do so, either set the Capist
 
     # From the command line
     SKIP_DEPLOY_TAGGING=true cap production deploy
-    
+
     # Inside your deploy.rb
     set :skip_deploy_tagging, true
 
