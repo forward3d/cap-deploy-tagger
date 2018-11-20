@@ -10,7 +10,7 @@ namespace :deploy do
         latest_revision = fetch(:current_revision)
         unless fetch(:sshkit_backend) ==  SSHKit::Backend::Printer # unless --dry-run flag present
           strategy.git "tag -f #{tag_name} #{latest_revision}"
-          strategy.git "push -f --tags"
+          strategy.git "push -f origin #{tag_name}"
         end
         info "[cap-deploy-tagger] Tagged #{latest_revision} with #{tag_name}"
       end
